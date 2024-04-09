@@ -1,0 +1,7 @@
+<app-command-bar (deleteAll)="deleteAllBlogs()"></app-command-bar>
+
+<ng-container *ngIf="blogs$ | async as blogs">
+  <div *ngFor="let blog of blogs; let i = index">
+    <app-blog-item [blog]="blog" (delete)="deleteBlog($event)"></app-blog-item>
+  </div>
+</ng-container>

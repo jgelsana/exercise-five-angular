@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{book.name}}</h5>
+        <p class="card-text"><small class="text-muted">ISBN: {{book.isbn}}</small></p>
+        <ul class="list-group list-group-flush">
+            <p class="card-text">Authors:</p>
+            <li class="list-group-item" *ngFor="let author of book.authors">{{author}}</li>
+        </ul>
+        <button type="button" class="btn btn-warning" (click)="onEditClick(book.id)">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="onDeleteClick(book.id)">Delete</button>
+    <div>
+</div>

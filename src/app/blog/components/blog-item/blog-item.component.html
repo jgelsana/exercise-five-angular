@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{blog.title}}</h5>
+        <p class="card-text">Description: {{blog.description}}</p>
+        <p class="card-text"><small class="text-muted">Author: {{blog.author}}</small></p>
+        <ul class="list-group list-group-flush">
+            <p class="card-text">Comments:</p>
+            <li class="list-group-item" *ngFor="let comment of blog.comments">{{comment}}</li>
+        </ul>
+        <button type="button" class="btn btn-warning" (click)="onEditClick(blog.id)">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="onDeleteClick(blog.id)">Delete</button>
+    </div>
+</div>

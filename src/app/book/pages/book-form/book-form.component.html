@@ -1,0 +1,29 @@
+<form [formGroup]="bookForm" class="container" (ngSubmit)="submit(bookForm.value)">
+    <br>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" id="name" class="form-control">
+    </div>
+    <ng-container formArrayName="authors">
+        <label for="authors">Authors</label>
+        <div class="input-group mb-3" *ngFor="let _ of authorFormArray.controls; index as i">
+            <input [formControlName]="i" class="form-control" />
+            <button type="button" class="btn btn-danger" (click)="deleteAuthor(i)">
+            Delete
+            </button>  
+        </div>
+        <button type="button" (click)="addAuthor()" class="btn btn-info">
+            Add Author
+        </button>
+        <br><br>
+    </ng-container>
+        <div class="form-group">
+            <label for="isbn">ISBN</label>
+            <input type="text" formControlName="isbn" id="isbn" class="form-control">
+        </div>
+        <br>
+        <div style="text-align: right;">
+        <button type="button" (click)="submit(bookForm.value)" class="btn btn-info">
+            Submit
+        </button>
+    </div>

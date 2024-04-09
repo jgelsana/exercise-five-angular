@@ -1,0 +1,39 @@
+<h4 class="text-center">Login Page</h4>
+
+<div class="container">
+	<form [formGroup]="loginForm" (ngSubmit)="loginUser()" novalidate>
+		<div class="form-group">
+	<label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" formControlName="email" placeholder="Enter email">
+      <small class="form-text text-muted" 
+        *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].errors?.['required']">
+          Please enter email address!
+      </small>
+
+      <small class="form-text text-muted"
+      *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].errors?.['email']">
+        Email address not well formed!
+      </small>
+    </div>
+
+    <br>
+    
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" formControlName="password" placeholder="Password">
+    </div>
+    <small class="form-text text-danger" *ngIf="wrongPassword">
+        Email and password do not match. Please try again.
+      </small>
+
+    <br> 
+    <div style="display: flex; justify-content: center;">
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Log In</button>
+      </div>
+
+    <div class="text-center">
+        Not a member?
+        <a [routerLink]="'/register'">Register</a>
+    </div>
+  </form>
+</div>

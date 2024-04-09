@@ -1,0 +1,24 @@
+<form [formGroup]="userForm" class="container" (ngSubmit)="submit(userForm.value)">
+    <br>
+    <div class="'form-group">
+        <label for="email">Email</label>
+        <input type="text" formControlName="email" id="email" class="form-control">
+    </div>
+    <div class="'form-group">
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" id="name" class="form-control">
+    </div>
+    <div class="'form-group">
+        <label for="bio">Bio</label>
+        <input type="text" formControlName="bio" id="bio" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="active">Active </label>
+        <input type="checkbox" formControlName="active" id="active" class="form-check-input">
+    </div>
+    <br>
+    <button type="button" (click)="submit(userForm.value)" class="btn btn-info">
+        Submit
+    </button>
+
+</form>
