@@ -1,0 +1,13 @@
+{
+  "routes": [
+    "/",
+    "/blog",
+    "/blog/form",
+    "/book",
+    "/book/form",
+    "/form",
+    "/login",
+    "/profile",
+    "/register"
+  ]
+}
